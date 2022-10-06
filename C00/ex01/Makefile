@@ -6,7 +6,7 @@
 #    By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 12:34:34 by mvieira-          #+#    #+#              #
-#    Updated: 2022/10/06 12:35:28 by mvieira-         ###   ########.fr        #
+#    Updated: 2022/10/06 13:13:16 by mvieira-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJS		=	$(SRCS:.cpp=.o)
 
 CC 			=	c++
 CFLAGS		= 	-Wall -Wextra -Werror -std=c++98
-OCFLAGS		=	-Wall -Wextra -Werror
+OCFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 all:	 		$(NAME)
 
