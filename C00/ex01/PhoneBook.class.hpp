@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:23:27 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/06 16:40:34 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/10 13:56:37 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,19 @@
 #include "Contact.class.hpp"
 
 class PhoneBook {
+    
     public:
-        PhoneBook(void);
-        ~PhoneBook(void);
-        void set_new_contact(Contact contact);
+        PhoneBook();
+        ~PhoneBook();
+
+    void    set_contact(Contact contact);
+    Contact get_contact(int index) const;
+    int     get_index() const;
+    int     get_saved_contacts() const;
     private:
-    int     index;
+
+    static int index;
+    static int saved_contacts;
     Contact contacts[8];
 };
 
