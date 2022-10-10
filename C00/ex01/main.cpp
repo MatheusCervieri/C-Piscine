@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:33:58 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/10 13:59:42 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:05:40 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,12 @@ void search_contact(PhoneBook *phonebook)
 {
     std::string out;
     
+    std::cout << "|     INDEX|      NAME| LAST NAME|  NICKNAME|" << std::endl;
     for(int i = 0; i < phonebook->get_saved_contacts(); i++)
     {
         phonebook->get_contact(i).display_columns(i);
     }
+    
     std::cout << "Which contact would you like to get information?" << std::endl;
     std::getline(std::cin, out);
     if (out[0] > '0' && out[0] < '9' && !out[1])
@@ -60,11 +62,8 @@ void search_contact(PhoneBook *phonebook)
     }
     else
     {
-    std::cout << "Invalid number" << std::endl; 
+        std::cout << "Invalid number" << std::endl; 
     }
-    //Verificar se é número
-    //Transformar em número
-    //Checar se é um contato possível. comparar com o index;
 }
 
 int main()

@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:26:10 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/10 12:55:27 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/10 14:02:23 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,11 @@ void Contact::display_field(std::string field) const
 
 void Contact::display_all_information() const
 {
-    std::cout << "First Name        :" << this->first_name << std::endl;
-	std::cout << "Last Name	        :	" << this->last_name << std::endl;
-	std::cout << "Nickname	        :	" << this->nick << std::endl;
-	std::cout << "Phone No.	        :	" << this->phone << std::endl;
-	std::cout << "Darkest Secret	:	" << this->secret << std::endl;
+    std::cout << "First Name: " << this->first_name << std::endl;
+	std::cout << "Last Name: " << this->last_name << std::endl;
+	std::cout << "Nickname: " << this->nick << std::endl;
+	std::cout << "Phone Number: " << this->phone << std::endl;
+	std::cout << "Darkest Secret: " << this->secret << std::endl;
 }
     
 std::string Contact::get_first_name() const
