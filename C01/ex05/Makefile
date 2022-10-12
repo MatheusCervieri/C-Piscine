@@ -1,0 +1,40 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/12 10:38:39 by mvieira-          #+#    #+#              #
+#    Updated: 2022/10/12 13:22:22 by mvieira-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+CC			=	c++
+INCLUDES	=	.
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$(INCLUDES)
+RM			=	rm -rf
+NAME 		= 	ex05
+SRCS		=	main.cpp \
+				Harl.hpp \
+				Harl.cpp \
+
+OBJS		=	$(SRCS:%.cpp=%.o)
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			@$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+.cpp.o:
+			@$(CC) $(CPPFLAGS) -c $< -o $(<:.cpp=.o)
+
+clean:
+			@$(RM) $(OBJS)
+
+fclean:		clean
+			@$(RM) $(NAME)
+
+re:			fclean all
+
+.PHONY:		fclean, all, re
