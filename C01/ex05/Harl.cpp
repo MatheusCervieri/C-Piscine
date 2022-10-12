@@ -6,11 +6,12 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 15:29:24 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/12 15:33:08 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/12 15:43:29 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <Harl.hpp>
 
 Harl::Harl(void)
 {
@@ -30,12 +31,14 @@ void Harl::complain(std::string level)
 		"WARNING",
 		"ERROR"
 	};
+    
 	void (Harl::*f[4])(void) = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
 		&Harl::error
 	};
+    
 	for (int i = 0; i < 4; i++)
 	{
 		if (levels[i] == level)
