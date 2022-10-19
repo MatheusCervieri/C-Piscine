@@ -5,31 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 11:21:44 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/19 11:26:40 by mvieira-         ###   ########.fr       */
+/*   Created: 2022/10/19 11:21:41 by mvieira-          #+#    #+#             */
+/*   Updated: 2022/10/19 13:52:56 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#include "PresidentialPardonForm.hpp"
 
-#include "Form.hpp"
-
-class PresidentialPardonForm : public Form
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
+: Form( "PresidentialPardonForm", 25, 5 ), target(target) 
 {
     
-private:
-    std::string target;
+}
 
-
-public:
-    PresidentialPardonForm( const std::string& target );
-    PresidentialPardonForm( const PresidentialPardonForm& src );
-    ~PresidentialPardonForm();
-
-    PresidentialPardonForm& operator=(const PresidentialPardonForm& rhs);
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& src) : 
+Form(src), target(src.target) 
+{
     
-    void execute(const Bureaucrat& executor) const;
-};
+}
 
-#endif
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+    
+}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& rhs)
+{
+    (void)rhs;
+    return *this;
+}
+
+void    PresidentialPardonForm::execute(const Bureaucrat& executor) const {
+    if ( executor.getGrade() > this->getGradeToExecute() )
+        throw Form::GradeTooLowException();
+     if (this->getSigned() == false)
+        throw Form::NotSignedException();
+    else {
+        std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+    }
+}

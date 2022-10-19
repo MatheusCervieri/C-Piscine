@@ -6,7 +6,10 @@ RM			=	rm -rf
 SRCS		=	main.cpp \
 				Bureaucrat.cpp \
 				Form.cpp \
-				ShrubberyCreationForm.cpp
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp
+
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
