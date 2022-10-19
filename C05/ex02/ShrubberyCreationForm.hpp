@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:59:12 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/19 11:42:27 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:37:03 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "Form.hpp"
 #include <fstream>
 #include <string>
-
-class Form;
 
 class ShrubberyCreationForm : public Form {
 
