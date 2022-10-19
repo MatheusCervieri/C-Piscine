@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:09:34 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/19 11:18:16 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:21:29 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void    RobotomyRequestForm::execute(const Bureaucrat& executor) const {
         throw Form::NotSignedException();
     else 
     {
-        if ( i++ % 2 == 0 )
+        if (i++ % 2 == 0)
             std::cout << "BRICHHHHHT! " << this->target << " has been robotomized!" << std::endl;
         else
             std::cout << "Robotomy failed! " << std::endl;
