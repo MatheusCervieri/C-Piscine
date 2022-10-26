@@ -6,11 +6,13 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:26:04 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/26 09:29:05 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/26 10:36:02 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Converter.hpp"
+#include <stdlib.h>
+
 
 Converter::Converter()
 {
@@ -19,6 +21,15 @@ Converter::Converter()
 Converter::Converter(const std::string input)
 {
 	this->var_type = parsing(input);
+    if (this->var_type == 1)
+        convert_char(input);
+    if (this->var_type == 2)
+        convert_int(input);
+    if (this->var_type == 3)
+        convert_float(input);
+    if(this->var_type == 4)
+        convert_double(input);
+    print();
 }
 
 Converter::Converter(const Converter&  src)
@@ -34,6 +45,39 @@ Converter & Converter::operator=( const Converter & rhs )
 {
     (void) rhs;
     return *this;
+}
+
+void Converter::convert_char(const std::string input)
+{
+    this->char_type = input[0];
+    this->int_type = static_cast<int>(this->char_type);
+	this->float_type = static_cast<float>(this->char_type);
+	this->double_type = static_cast<double>(this->char_type);
+}
+
+void Converter::convert_int(const std::string input)
+{
+    this->int_type = atoi(input.c_str());
+    this->char_type = static_cast<char>(this->int_type);
+	this->float_type = static_cast<float>(this->int_type);
+	this->double_type = static_cast<double>(this->int_type);
+}
+
+void Converter::convert_float(const std::string input)
+{
+    this->float_type = atof(input.c_str());
+    this->char_type = static_cast<char>(this->float_type);
+	this->int_type = static_cast<int>(this->float_type);
+	this->double_type = static_cast<double>(this->float_type);
+ 
+}
+
+void Converter::convert_double(const std::string input)
+{
+    this->double_type = strtod(input.c_str(), NULL);
+    this->char_type= static_cast<char>(this->double_type);
+	this->int_type = static_cast<int>(this->double_type);
+	this->float_type = static_cast<float>(this->double_type);
 }
 
 int Converter::parsing(const std::string & input)
@@ -75,4 +119,13 @@ int Converter::parsing(const std::string & input)
 			throw Converter::InvalidInputException();
 	}
 	return (var_type);
+}
+
+void Converter::print()
+{
+    std::cout << std::setprecision(1) << std::fixed;
+    std::cout << "Char: " << this->char_type << std::endl;
+    std::cout << "Int: " << this->int_type << std::endl;
+    std::cout << "Float: " << this->float_type << std::endl;
+    std::cout << "Double: " << this->double_type << std::endl;
 }

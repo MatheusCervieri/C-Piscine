@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:57:53 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/26 09:26:09 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/26 10:32:09 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,17 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Converter
 	{
 		private:
 			std::string input;
 			int			var_type;
+			char		char_type;
+			int			int_type;
+			float		float_type;
+			double		double_type;
 			
 		public:
 			Converter();
@@ -29,7 +34,13 @@ class Converter
 			Converter(const Converter & src);
 			Converter& operator=(const Converter & rhs);
 
-			int	parsing(const std::string & input);
+			int		parsing(const std::string & input);
+			void	convert_char(const std::string input);
+			void	convert_int(const std::string input);
+			void	convert_float(const std::string input);
+			void	convert_double(const std::string input);
+
+			void	print();
 			
 		class InvalidInputException : public std::exception {
         	public:
