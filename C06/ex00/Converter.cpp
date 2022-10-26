@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 19:26:04 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/26 10:36:02 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/26 11:24:51 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Converter::Converter(const std::string input)
         convert_float(input);
     if(this->var_type == 4)
         convert_double(input);
-    print();
+    print(input);
 }
 
 Converter::Converter(const Converter&  src)
@@ -121,11 +121,22 @@ int Converter::parsing(const std::string & input)
 	return (var_type);
 }
 
-void Converter::print()
+void Converter::print(const std::string input)
 {
     std::cout << std::setprecision(1) << std::fixed;
-    std::cout << "Char: " << this->char_type << std::endl;
-    std::cout << "Int: " << this->int_type << std::endl;
-    std::cout << "Float: " << this->float_type << std::endl;
+    if (input == "nanf" || input == "-inff" || input == "+inff" || input == "nan" || input == "-inf" || input == "+inf")
+	{
+        std::cout << "Char: impossible" << std::endl;
+        std::cout << "Int: impossible" << std::endl;
+    }
+    else
+    {
+        if (this->char_type >= 32 && this->char_type <= 127)
+            std::cout << "Char: " << "'" <<  this->char_type << "'" << std::endl;
+        else
+            std::cout << "Char: " << "Non displayable" << std::endl;
+        std::cout << "Int: " << this->int_type << std::endl;
+    }
+    std::cout << "Float: " << this->float_type << "f" << std::endl;
     std::cout << "Double: " << this->double_type << std::endl;
 }

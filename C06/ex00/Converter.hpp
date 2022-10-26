@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:57:53 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/26 10:32:09 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/26 11:22:30 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Converter
 		private:
 			std::string input;
 			int			var_type;
-			char		char_type;
+			unsigned char		char_type;
 			int			int_type;
 			float		float_type;
 			double		double_type;
@@ -40,7 +40,7 @@ class Converter
 			void	convert_float(const std::string input);
 			void	convert_double(const std::string input);
 
-			void	print();
+			void	print(const std::string input);
 			
 		class InvalidInputException : public std::exception {
         	public:
