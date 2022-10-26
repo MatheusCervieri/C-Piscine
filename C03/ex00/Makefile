@@ -5,7 +5,6 @@ CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 RM			=	rm -rf
 SRCS		=	main.cpp \
 				ClapTrap.cpp \
-				ClapTrap.hpp 
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 

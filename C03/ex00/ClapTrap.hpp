@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:07:45 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/11 12:59:25 by mvieira-         ###   ########.fr       */
+/*   Created: 2022/10/17 10:49:39 by mvieira-          #+#    #+#             */
+/*   Updated: 2022/10/17 13:11:03 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#include <string>
 
-int main ()
+class ClapTrap
 {
-    int     zombies_nb = 21;
-    Zombie *zombies = zombieHorde(zombies_nb, "Zombie");
-    int i;
-
-    i = 0;
-    while (i < zombies_nb)
-    {
-        zombies[i].announce();
-        i++;
-    }
+    public: 
     
-    delete [] zombies;
-}
+    ClapTrap(void);
+    ClapTrap(std::string name);
+    ~ClapTrap(void);
+    void attack(const std::string& target);
+    void beRepaired(unsigned int amount);
+    void takeDamage(unsigned int amount);
+
+    private:
+    std::string name;
+    int hit_points;
+    int energy_points;
+    int attack_damage;
+};

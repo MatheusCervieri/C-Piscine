@@ -6,11 +6,11 @@
 #    By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/14 11:14:09 by mvieira-          #+#    #+#              #
-#    Updated: 2022/10/17 09:12:53 by mvieira-         ###   ########.fr        #
+#    Updated: 2022/10/17 10:27:22 by mvieira-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	ex01
+NAME		=	ex02
 CC			=	c++
 INCLUDES	=	includes
 CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 

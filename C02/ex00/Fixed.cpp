@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:14:53 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/14 11:40:13 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/17 09:01:22 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Fixed::Fixed(void) : fixed_point(0)
 Fixed::Fixed(const Fixed& other)
 {
     *this = other;
+    std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& rhs)
