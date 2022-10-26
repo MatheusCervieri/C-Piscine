@@ -6,7 +6,7 @@
 /*   By: mvieira- <mvieira-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:13:40 by mvieira-          #+#    #+#             */
-/*   Updated: 2022/10/26 15:10:04 by mvieira-         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:11:50 by mvieira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int main()
     //Pointer
     identify(b1);
     identify(b2);
-
 
     b1 = generate();
     usleep(1000000);
